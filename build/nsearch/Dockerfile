@@ -36,6 +36,8 @@ RUN pip install -r requirements.txt
 
 RUN sh install.sh
 
+RUN ["/bin/bash", "-c", "python nsearch.py"]
+
 RUN echo 'alias nsearch="python /var/www/nsearch/nsearch.py"' >> ~/.bashrc
 
 CMD ["tail","-f","/dev/null"]
