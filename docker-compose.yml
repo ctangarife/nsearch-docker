@@ -6,5 +6,5 @@ services:
             context: ./
             dockerfile: build/nsearch/Dockerfile
         restart:  always
-        volumes: 
-            - ./data/nsearch:/var/www/nsearch-dev
+        # volumes: 
+        #     - ./data/nsearch:/var/www/nsearch-dev

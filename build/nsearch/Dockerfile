@@ -24,7 +24,7 @@ RUN rm -rf /var/cache/apk/*
 
 WORKDIR /var/www/
 
-RUN git clone https://github.com/jtibaquira/nsearch.git nsearch
+RUN git clone -b dev https://github.com/ctangarife/nsearch.git nsearch
 
 ADD ./build/nsearch/requirements.txt /var/www/nsearch/requirements.txt
 
