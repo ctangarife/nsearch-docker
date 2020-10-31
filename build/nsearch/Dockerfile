@@ -26,16 +26,16 @@ WORKDIR /var/www/
 
 RUN git clone -b dev https://github.com/ctangarife/nsearch.git nsearch
 
-ADD ./build/nsearch/requirements.txt /var/www/nsearch/requirements.txt
-
 ADD ./build/nsearch/config.yaml /var/www/nsearch/scripts/config.yaml
 
 WORKDIR /var/www/nsearch
+
+RUN pip install --upgrade pip
 
 RUN pip install -r requirements.txt
 
 RUN sh install.sh
 
-#ENTRYPOINT ["/usr/bin/nmap"]
+RUN echo 'alias nsearch="python /var/www/nsearch/nsearch.py"' >> ~/.bashrc
 
 CMD ["tail","-f","/dev/null"]
