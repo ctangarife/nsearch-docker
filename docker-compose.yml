@@ -1,0 +1,10 @@
+version: "3.3"
+services:
+    nsearch:
+        container_name: nsearch-docker
+        build: 
+            context: ./
+            dockerfile: build/nsearch/Dockerfile
+        restart:  always
+        volumes: 
+            - ./data/nsearch:/var/www/nsearch-dev
